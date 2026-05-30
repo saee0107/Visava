@@ -312,8 +312,8 @@ img {
 }
 
 .logo-img {
-  width: 45px;
-  height: 45px;
+  width: 100px;
+  height: 80px;
   object-fit: contain;
 }
 
