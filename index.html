@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Experience premium luxury dining at Visava Hill Resort, located in Atali, Kass, Satara. Indulge in authentic Maharashtrian Veg and Non-Veg Thalis, Kolhapuri Chicken, and fresh Jowar Bhakri amidst breathtaking misty mountains.">
+  <title>Visava Hill Resort | Maharashtrian Dining in Satara</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for Premium Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Custom Scroll Progress Bar -->
+  <div id="scroll-progress"></div>
+
+  <!-- Header / Navigation Bar -->
+  <header id="main-header">
+    <div class="header-container">
+      <a href="#home" class="logo" id="nav-logo">
+        <!-- Logo Image (Fixed Path) -->
+        <img src="./assets/images/vlogo.jpg" class="logo-img" alt="Visava Hill Resort logo wordmark">
+        <span class="logo-title">VISAVA</span>
+        <span class="logo-subtitle">HILL RESORT</span>
+      </a>
+      
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav">
+        <ul>
+          <li><a href="#home" class="nav-link active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#menu" class="nav-link">Menu</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- CTA Button in Navbar -->
+      <div class="header-cta">
+        <a href="#menu" class="btn btn-nav-gold">Explore Menu</a>
+      </div>
+
+      <!-- Mobile Navigation Hamburger Menu Toggle -->
+      <button class="mobile-nav-toggle" aria-label="Toggle navigation" id="menu-toggle-btn">
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Overlay Navigation Menu -->
+  <div class="mobile-overlay" id="mobile-overlay-menu">
+    <!-- Added Close Button directly into the overlay for premium user experience -->
+    <button class="mobile-menu-close" id="menu-close-btn" aria-label="Close navigation">&times;</button>
+    
+    <nav class="mobile-nav-links">
+      <ul>
+        <li><a href="#home" class="mobile-link active">Home</a></li>
+        <li><a href="#about" class="mobile-link">About</a></li>
+        <li><a href="#menu" class="mobile-link">Menu</a></li>
+        <li><a href="#contact" class="mobile-link">Contact</a></li>
+      </ul>
+      <div class="mobile-overlay-footer">
+        <div class="resort-location">
+          <i class="fa-solid fa-location-dot"></i> Atali, Kass, Satara
+        </div>
+        <div class="resort-phone">
+          <i class="fa-solid fa-phone"></i> +91 99691 52191
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <!-- Main Content Wrap -->
+  <main>
+
+    <!-- SECTION 1: Home / Cinematic Hero Banner -->
+    <section id="home" class="hero-section">
+      <div class="hero-bg-overlay"></div>
+      <div class="hero-container">
+        <div class="hero-badge fade-in">
+          <span class="badge-line"></span>
+          <span class="badge-text">KASS PLATEAU, SATARA</span>
+          <span class="badge-line"></span>
+        </div>
+        <h1 class="hero-title fade-in delay-1">
+          Experience Authentic Maharashtrian Flavours <br>
+          <span class="gold-text-accent">in the Heart of Nature</span>
+        </h1>
+        <p class="hero-subtitle fade-in delay-2">
+          Perched on the serene valleys of Atali, we combine the misty charm of Satara’s mountains with the rich, bold heritage of authentic Maharashtrian culinary masterpieces.
+        </p>
+        <div class="hero-actions fade-in delay-3">
+          <a href="#menu" class="btn btn-gold-solid">Explore Menu</a>
+          <a href="#about" class="btn btn-white-border">Discover Our Story</a>
+        </div>
+      </div>
+      
+      <!-- Decorative Scroll Down Indicator -->
+      <div class="scroll-down-wrapper">
+        <a href="#about" class="scroll-down-indicator" aria-label="Scroll to About Section">
+          <span class="mouse-icon">
+            <span class="mouse-wheel"></span>
+          </span>
+          <span class="scroll-text">Scroll to Discover</span>
+        </a>
+      </div>
+    </section>
+
+    <!-- SECTION 2: About / The Resort & Cuisine Story -->
+    <section id="about" class="about-section section-padding scroll-reveal">
+      <div class="about-container">
+        <div class="about-grid">
+          
+          <!-- Column 1: Cinematic Text & Details -->
+          <div class="about-content">
+            <div class="section-tag">
+              <span class="gold-dot"></span> THE VISAVA EXPERIENCE
+            </div>
+            <h2 class="section-title">
+              Where Mist-Covered Mountains <br>
+              Meet <span class="gold-text-accent">Fiery Local Flavours</span>
+            </h2>
+            <div class="about-story">
+              <p class="story-lead">
+                Visava Hill Resort is not merely a restaurant; it is a peaceful culinary sanctuary cradled by the rolling green valleys of Atali, Satara.
+              </p>
+              <p class="story-body">
+                Located a stone's throw from the world-famous Kass Flower Plateau (Maharashtra's Valley of Flowers), Visava offers a luxurious and family-friendly retreat. Here, the fresh mountain air of Satara heightens your senses, preparing you for a legendary dining experience.
+              </p>
+              <p class="story-body">
+                We take immense pride in preserving authentic Maharashtrian culinary lineages. From the rich, fire-roasted gravies of Kolhapur to the refreshing tang of coastal solkadhi, our chefs employ age-old family recipes and fresh, locally harvested ingredients to craft dishes that celebrate Maharashtra's diverse food culture.
+              </p>
+            </div>
+            
+            <!-- Key Highlights List -->
+            <div class="about-highlights">
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-mountain"></i>
+                </div>
+                <div class="highlight-info">
+                  <h3>Scenic Valley Deck</h3>
+                  <p>Dine overlooking the foggy valleys of Atali, surrounded by untouched lush greenery.</p>
+                </div>
+              </div>
+              <div class="highlight-item">
+                <div class="highlight-icon">
+                  <i class="fa-solid fa-fire-burner"></i>
+                </div>
+                <div class="highlight-info">
+                  <h3>Heirloom Recipes</h3>
+                  <p>Hand-ground spices and traditional clay ovens bring authentic local dishes to life.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Column 2: Gorgeous Layered Visuals -->
+          <div class="about-visuals">
+            <div class="main-image-wrapper">
+              <div class="glass-photo-frame">
+                <img src="./assets/images/kaas_pathar.jpg" alt="Dining deck at Visava Hill Resort overlooking misty Kass Valley with soft golden light" class="about-main-img" loading="lazy">
+              </div>
+            </div>
+            <div class="floating-badge-glass">
+              <div class="badge-stat">100%</div>
+              <div class="badge-lbl">Authentic spices & fresh local produce</div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </section>
+
+    <!-- Mid-Page Cinematic Parallax Quote Banner -->
+    <section class="parallax-quote-section">
+      <div class="parallax-overlay"></div>
+      <div class="parallax-content">
+        <i class="fa-solid fa-quote-left quote-icon-gold"></i>
+        <blockquote class="cinematic-quote">
+          "Food is not just sustenance; it is a sacred journey of smoke, spice, and memory. In the hills of Satara, we let the forest breathe into every single flame."
+        </blockquote>
+        <cite class="quote-author">— Executive Chef, Visava Hill Resort</cite>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Interactive Menu Explorer -->
+    <section id="menu" class="menu-section section-padding scroll-reveal">
+      <div class="menu-container">
+        
+        <!-- Header of Menu Section -->
+        <div class="section-header-center">
+          <div class="section-tag-center">
+            <span class="gold-dot"></span> ROYAL CULINARY ARCHIVE
+          </div>
+          <h2 class="section-title-center">
+            Explore Our <span class="gold-text-accent">Exquisite Specialties</span>
+          </h2>
+          <p class="section-subtitle-center">
+            From hot stone-baked Jowar Bhakris to fiery Kolhapuri rassa curries, discover the rich heritage of Maharashtra.
+          </p>
+        </div>
+
+        <!-- Filter Navigation Tabs -->
+        <div class="menu-tabs-wrapper">
+          <div class="menu-tabs-container">
+            <button class="menu-tab-btn active" data-category="all">
+              <i class="fa-solid fa-leaf-maple"></i> All Culinary Gems
+            </button>
+            <button class="menu-tab-btn" data-category="thalis">
+              <i class="fa-solid fa-circle-notch"></i> Grand Thalis
+            </button>
+            <button class="menu-tab-btn" data-category="veg">
+              <i class="fa-solid fa-seedling"></i> Veg Specialties
+            </button>
+            <button class="menu-tab-btn" data-category="nonveg">
+              <i class="fa-solid fa-drumstick-bite"></i> Non-Veg Specialties
+            </button>
+            <button class="menu-tab-btn" data-category="starters">
+              <i class="fa-solid fa-fire"></i> Starters & Breads
+            </button>
+            <button class="menu-tab-btn" data-category="beverages">
+              <i class="fa-solid fa-glass-water"></i> Beverages
+            </button>
+          </div>
+        </div>
+
+        <!-- Menu Grid Container -->
+        <div class="menu-grid" id="menu-items-grid">
+          
+          <!-- ITEM 1: Veg Thali -->
+          <div class="menu-card-wrapper" data-item-category="thalis veg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="./assets/images/veg_thali.jpg" alt="Brass plate with traditional Maharashtrian vegetarian thali items including rice, dal, paneer, bhakri and vegetables" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag veg-tag"><i class="fa-solid fa-circle"></i> VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Maharashtrian Veg Thali</h3>
+                </div>
+                <p class="menu-item-desc">
+                  A lavish, traditional brass platter holding organic local vegetables, creamy Dal Tadka, fiery Paneer Kolhapuri, rustic Pithla, piping-hot Jowar Bhakris, steamed fragrant Indrayani rice, and sweet Shrikhand.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-award"></i> Signature Resort Platter</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 2: Chicken Thali -->
+          <div class="menu-card-wrapper" data-item-category="thalis nonveg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="./assets/images/chicken_thali.jpg" alt="Nonveg thali with spicy chicken curry, dry chicken sukka, jowar bhakri and rice served on a rustic table" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag nonveg-tag"><i class="fa-solid fa-circle"></i> NON-VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Authentic Chicken Thali</h3>
+                </div>
+                <p class="menu-item-desc">
+                  Satara-special thali highlighting house-spiced Chicken Kolhapuri Rassa, succulent dry Chicken Sukka roasted in grated black coconut, hot red Tambda Rassa, smooth Pandhra Rassa, Jowar Bhakri, and biryani rice.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-fire"></i> Local Favorite</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 3: Mutton Thali -->
+          <div class="menu-card-wrapper" data-item-category="thalis nonveg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="./assets/images/mutton_thali.jpg" alt="Royal mutton thali with tender curry bowls, fried mutton pieces, bhakri and fragrant rice in a warm setting" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag nonveg-tag"><i class="fa-solid fa-circle"></i> NON-VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Luxury Mutton Thali</h3>
+                </div>
+                <p class="menu-item-desc">
+                  An absolute feast of tender local mutton simmered in our robust black spices. Features dry Mutton Fry, simmering bowls of hot spicy Tambda Rassa, rich buttery Pandhra Rassa, stone-fired Bhakris, and aromatic rice.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-crown"></i> Royal Heritage Platter</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 4: Tandoori Chicken -->
+          <div class="menu-card-wrapper" data-item-category="starters nonveg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="./assets/images/tandoori_chicken.jpg" alt="Charred tandoori chicken quarters on a platter with roasted spices creating a smoky, warm atmosphere" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag nonveg-tag"><i class="fa-solid fa-circle"></i> NON-VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Tandoori Chicken Platter</h3>
+                </div>
+                <p class="menu-item-desc">
+                  Succulent, bone-in chicken quarters tenderized in thick organic yogurt, infused with ginger, garlic, and home-roasted tandoori spices, smoked to perfection in our outdoor clay hearth.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-wind"></i> Clay Oven Baked</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 5: Malvani Seafood Feast -->
+          <div class="menu-card-wrapper" data-item-category="nonveg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="./assets/images/fish_fry.jpg" alt="Fish fry and crab masala served with lemon wedge and onions on a bold coastal style platter" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag nonveg-tag"><i class="fa-solid fa-circle"></i> NON-VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Malvani Seafood Feast</h3>
+                </div>
+                <p class="menu-item-desc">
+                  Crispy, golden semolina-coated Surmai (Kingfish) fry, coupled with a rich, velvety Malvani Crab Masala cooked in a thick coconut and roasted pepper base. Served with lemon wedges and fresh onions.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-anchor"></i> Coastal Special</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 6: Kolhapuri Chicken -->
+          <div class="menu-card-wrapper" data-item-category="nonveg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?auto=format&fit=crop&w=800&q=80" alt="Deep red Kolhapuri chicken curry in a bowl with rich spices and warm steam" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag nonveg-tag"><i class="fa-solid fa-circle"></i> NON-VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Kolhapuri Chicken </h3>
+                </div>
+                <p class="menu-item-desc">
+                  A fiery, dark red, and intensely aromatic chicken gravy, simmered with authentic hand-pounded Kolhapuri Kanda-Lasun (onion-garlic) masala and roasted sesame-poppy seed thickener.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-pepper-hot"></i> Extravagantly Spicy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 7: Paneer Dishes -->
+          <div class="menu-card-wrapper" data-item-category="veg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="https://images.unsplash.com/photo-1631452180519-c014fe946bc7?auto=format&fit=crop&w=800&q=80" alt="Paneer Kolhapuri with cottage cheese cubes in deep red coconut spice gravy topped with cashews" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag veg-tag"><i class="fa-solid fa-circle"></i> VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Royal Paneer Kolhapuri</h3>
+                </div>
+                <p class="menu-item-desc">
+                  Fresh, melt-in-the-mouth cottage cheese cubes slow-cooked in a fiery, rich red coconut reduction, packed with local spices and topped with melted home butter and toasted cashew pieces.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-cheese"></i> Organic Dairy</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 8: Pithla Bhakri -->
+          <div class="menu-card-wrapper" data-item-category="starters veg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="./assets/images/pithla_bhakar.jpg" alt="Wicker basket holding two thick jowar bhakris with pithla and green chilli thecha in a rustic setting" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag veg-tag"><i class="fa-solid fa-circle"></i> VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Pithla Bhakri</h3>
+                </div>
+                <p class="menu-item-desc">
+                  A wicker basket of two hot, thick, Jowar (sorghum) flatbreads, hand-patted and roasted on a traditional clay griddle. Served rustic style with fresh green garlic-chilli Korda/Thecha.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-wheat-awn"></i> Hearth Baked</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ITEM 9: solkadhi -->
+          <div class="menu-card-wrapper" data-item-category="beverages veg">
+            <div class="menu-card glass-card">
+              <div class="menu-card-image-box">
+                <img src="./assets/images/solkadhi.jpg" alt="Pink solkadhi served in a glass with coriander garnish on a refreshing coastal-inspired backdrop" class="menu-card-img" loading="lazy">
+                <div class="menu-card-tag veg-tag"><i class="fa-solid fa-circle"></i> VEG</div>
+              </div>
+              <div class="menu-card-content">
+                <div class="menu-card-header">
+                  <h3 class="menu-item-title">Traditional Solkadhi</h3>
+                </div>
+                <p class="menu-item-desc">
+                  An exceptionally refreshing, pink-hued digestive nectar crafted from fresh-pressed thick coconut milk, tart red Kokum rind extract, hint of green garlic, chillies, and fresh green coriander.
+                </p>
+                <div class="menu-card-footer">
+                  <span class="chef-recommend"><i class="fa-solid fa-heart-pulse"></i> Perfect Digestive</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Contact & Scenic Location -->
+    <section id="contact" class="contact-section section-padding scroll-reveal">
+      <div class="contact-container">
+        <div class="contact-grid">
+          
+          <!-- Column 1: Info & Opening Hours -->
+          <div class="contact-info-panel glass-card">
+            <div class="section-tag">
+              <span class="gold-dot"></span> PLAN YOUR VISIT
+            </div>
+            <h2 class="contact-title">Dine in <span class="gold-text-accent">Serenity</span></h2>
+            <p class="contact-desc">
+              Come, escape the chaos of the city. We welcome you to experience high-end luxury dining surrounded by clouds and pristine green hills.
+            </p>
+            
+            <div class="contact-details">
+              <!-- Address -->
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                </div>
+                <div class="contact-text-box">
+                  <h4>Our Location</h4>
+                  <p>Atali, Kass Pathar Road, Satara District, Maharashtra — 415002</p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <i class="fa-solid fa-phone-volume"></i>
+                </div>
+                <div class="contact-text-box">
+                  <h4>Reservations & Inquiries</h4>
+                  <p class="phone-link"><a href="tel:+919969152191">+91 99691 52191</a></p>
+                </div>
+              </div>
+
+              <!-- Opening Hours -->
+              <div class="contact-item">
+                <div class="contact-icon-box">
+                  <i class="fa-solid fa-clock"></i>
+                </div>
+                <div class="contact-text-box">
+                  <h4>Opening Hours</h4>
+                  <p><strong>Everyday:</strong> 11:30 AM — 11:30 PM</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Column 2: Elegant Contact Form -->
+          <div class="contact-form-panel glass-card">
+            <h3>Send a Message</h3>
+            <p>Have an inquiry for family events, corporate gatherings, or private deck dining? Drop us a line below.</p>
+            
+            <form id="visava-contact-form" class="custom-form">
+              <div class="form-row-2">
+                <div class="form-group">
+                  <label for="form-name">Full Name</label>
+                  <input type="text" id="form-name" placeholder="E.g., Aditya Shinde" required>
+                </div>
+                <div class="form-group">
+                  <label for="form-phone">Phone Number</label>
+                  <input type="tel" id="form-phone" placeholder="E.g., +91 98765 43210" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="form-email">Email Address</label>
+                <input type="email" id="form-email" placeholder="E.g., aditya@example.com" required>
+              </div>
+              <div class="form-group">
+                <label for="form-inquiry">Inquiry Type</label>
+                <select id="form-inquiry">
+                  <option value="dining">General Dining & Atmosphere</option>
+                  <option value="party">Family Celebration / Birthday</option>
+                  <option value="corporate">Corporate Outing / Retreat</option>
+                  <option value="catering">Special Catering Request</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="form-message">Your Message</label>
+                <textarea id="form-message" rows="4" placeholder="How can we craft your perfect Visava experience?" required></textarea>
+              </div>
+              
+              <button type="submit" class="btn btn-gold-solid btn-full">Send Message <i class="fa-solid fa-paper-plane icon-right"></i></button>
+            </form>
+            
+            <!-- Success/Feedback Alert (Hidden initially) -->
+            <div class="form-alert-success" id="form-success-message">
+              <i class="fa-solid fa-circle-check"></i>
+              <div class="alert-content">
+                <h4>Message Sent Successfully</h4>
+                <p>Thank you! Our concierge team will reach out to you within 24 hours.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Premium Footer -->
+  <footer class="resort-footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        
+        <!-- About Column -->
+        <div class="footer-col footer-about">
+          <h3>VISAVA</h3>
+          <p class="footer-tagline">Luxurious Hill Resort & Dining</p>
+          <p>
+            An exquisite dining getaway tucked inside the Western Ghats, blending rich Maharashtrian culinary art with spectacular hill views.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Explore Visava</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">Our Story</a></li>
+            <li><a href="#menu">Exquisite Menu</a></li>
+            <li><a href="#contact">Contact & Map</a></li>
+          </ul>
+        </div>
+
+        <!-- Operating Hours Summary -->
+        <div class="footer-col">
+          <h4>Dining Hours</h4>
+          <p>Open daily for lunch & dinner.</p>
+          <p class="footer-time">11:30 AM — 11:30 PM</p>
+          <p class="footer-highlight">Kass Pathar Road, Satara</p>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="footer-bottom-bar">
+        <p>&copy; 2026 Visava Hill Resort. All Rights Reserved.</p>
+        <p class="footer-author">Crafted with Luxury in Maharashtra</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main Interaction Controller -->
+  <script src="app.js"></script>
+
+  <!-- MOBILE NAVIGATION CONTROLLER CODE -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const menuToggleBtn = document.getElementById('menu-toggle-btn');
+      const mobileOverlayMenu = document.getElementById('mobile-overlay-menu');
+      const menuCloseBtn = document.getElementById('menu-close-btn');
+      const mobileLinks = document.querySelectorAll('.mobile-link');
+
+      // Function to open mobile navigation overlay
+      function openMenu() {
+        mobileOverlayMenu.classList.add('active');
+        menuToggleBtn.classList.add('open');
+        document.body.style.overflow = 'hidden'; // Prevents background body scrolling
+      }
+
+      // Function to close mobile navigation overlay
+      function closeMenu() {
+        mobileOverlayMenu.classList.remove('active');
+        menuToggleBtn.classList.remove('open');
+        document.body.style.overflow = ''; // Restores background scrolling
+      }
+
+      // Toggle functionality on hamburger button click
+      if (menuToggleBtn && mobileOverlayMenu) {
+        menuToggleBtn.addEventListener('click', function() {
+          if (mobileOverlayMenu.classList.contains('active')) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        });
+      }
+
+      // Add click event to explicit close icon if used
+      if (menuCloseBtn) {
+        menuCloseBtn.addEventListener('click', closeMenu);
+      }
+
+      // Smooth experience: close overlay immediately when any link inside it gets selected
+      mobileLinks.forEach(link => {
+        link.addEventListener('click', closeMenu);
+      });
+    });
+  </script>
+</body>
+</html>
