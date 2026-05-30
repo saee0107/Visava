@@ -1,251 +1,188 @@
-/* ==========================================================================
-   VISAVA HILL RESORT - CLIENT-SIDE INTERACTION CONTROLLER
-   Pure JavaScript, zero-dependencies. Highly performance-optimized.
-   ========================================================================== */
+/**
+ * VISAVA HILL RESORT - PREMIUM RESTAURANT INTERACTION CONTROLLER
+ * Handles navigation states, mobile animations, interactive filtering, and viewport reveals.
+ */
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  // Initialize Core Component Controllers
+  initScrollProgressBar();
+  initStickyHeader();
+  initMobileNavigation();
+  initMenuFilterSystem();
+  initActiveNavigationScrollMapping();
+  initScrollRevealAnimations();
+});
 
-  // ==========================================
-  // 1. GLOBAL ELEMENTS SELECTORS
-  // ==========================================
-  const header = document.getElementById('main-header');
-  const scrollProgress = document.getElementById('scroll-progress');
-  const menuToggleBtn = document.getElementById('menu-toggle-btn');
-  const mobileOverlayMenu = document.getElementById('mobile-overlay-menu');
-  const mobileLinks = document.querySelectorAll('.mobile-link');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section');
-  const menuTabs = document.querySelectorAll('.menu-tab-btn');
-  const menuCards = document.querySelectorAll('.menu-card-wrapper');
-  const contactForm = document.getElementById('visava-contact-form');
-  const successAlert = document.getElementById('form-success-message');
+/**
+ * 1. CUSTOM SCROLL PROGRESS BAR
+ * Fills up the custom progress indicator bar matching user reading depth.
+ */
+function initScrollProgressBar() {
+  const progressBar = document.getElementById("scroll-progress");
+  if (!progressBar) return;
 
-  // ==========================================
-  // 2. SCROLL EVENTS: STICKY HEADER & PROGRESS
-  // ==========================================
-  const handleScrollEffects = () => {
-    const scrollTop = window.scrollY || document.documentElement.scrollTop;
-    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  window.addEventListener("scroll", () => {
+    const windowScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const totalHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
     
-    // Calculate scroll progress percentage
-    if (scrollHeight > 0) {
-      const scrollPercentage = (scrollTop / scrollHeight) * 100;
-      scrollProgress.style.width = `${scrollPercentage}%`;
+    if (totalHeight > 0) {
+      const scrollPercentage = (windowScroll / totalHeight) * 100;
+      progressBar.style.width = `${scrollPercentage}%`;
     }
+  });
+}
 
-    // Shrink header on scroll
-    if (scrollTop > 50) {
-      header.classList.add('scrolled');
+/**
+ * 2. SHRUNK STICKY HEADER
+ * Adjusts padding, opacity, and borders as the user leaves the top of the viewport.
+ */
+function initStickyHeader() {
+  const mainHeader = document.getElementById("main-header");
+  if (!mainHeader) return;
+
+  const toggleHeaderState = () => {
+    if (window.scrollY > 50) {
+      mainHeader.classList.add("scrolled");
     } else {
-      header.classList.remove('scrolled');
+      mainHeader.classList.remove("scrolled");
     }
   };
 
-  window.addEventListener('scroll', handleScrollEffects, { passive: true });
-  handleScrollEffects(); // Initial check on load
+  // Run on load and bind to scrolling interactions
+  toggleHeaderState();
+  window.addEventListener("scroll", toggleHeaderState);
+}
 
-  // ==========================================
-  // 3. MOBILE MENU OVERLAY TRANSITIONS
-  // ==========================================
-  const toggleMobileMenu = () => {
-    const isOpen = mobileOverlayMenu.classList.contains('open');
-    if (isOpen) {
-      // Close menu
-      mobileOverlayMenu.classList.remove('open');
-      menuToggleBtn.classList.remove('open');
-      document.body.style.overflow = ''; // Enable scrolling
-    } else {
-      // Open menu
-      mobileOverlayMenu.classList.add('open');
-      menuToggleBtn.classList.add('open');
-      document.body.style.overflow = 'hidden'; // Lock scrolling
-    }
+/**
+ * 3. MOBILE HAMBURGER TOGGLE & OVERLAY MENU
+ * Coordinates active transition transformations between menu panel and action lines.
+ */
+function initMobileNavigation() {
+  const menuToggleBtn = document.getElementById("menu-toggle-btn");
+  const mobileOverlayMenu = document.getElementById("mobile-overlay-menu");
+  const mobileLinks = document.querySelectorAll(".mobile-link");
+
+  if (!menuToggleBtn || !mobileOverlayMenu) return;
+
+  const toggleMenu = () => {
+    const isOpen = menuToggleBtn.classList.toggle("open");
+    mobileOverlayMenu.classList.toggle("open", isOpen);
+    
+    // Prevent background scrolling behind the heavy overlay blur filter
+    document.body.style.overflow = isOpen ? "hidden" : "";
   };
 
-  menuToggleBtn.addEventListener('click', toggleMobileMenu);
+  const closeMenu = () => {
+    menuToggleBtn.classList.remove("open");
+    mobileOverlayMenu.classList.remove("open");
+    document.body.style.overflow = "";
+  };
 
-  // Close mobile menu on clicking links
+  // Desktop/Mobile toggle actions
+  menuToggleBtn.addEventListener("click", toggleMenu);
+
+  // Close interface when clicking individual navigation routing hooks
   mobileLinks.forEach(link => {
-    link.addEventListener('click', () => {
-      mobileOverlayMenu.classList.remove('open');
-      menuToggleBtn.classList.remove('open');
-      document.body.style.overflow = '';
-      
-      // Update active mobile class immediately
-      mobileLinks.forEach(l => l.classList.remove('active'));
-      link.classList.add('active');
-    });
+    link.addEventListener("click", closeMenu);
   });
+}
 
-  // ==========================================
-  // 4. INTERSECTION OBSERVER FOR SCROLL REVEALS
-  // ==========================================
-  const revealOptions = {
-    threshold: 0.15,
-    rootMargin: '0px 0px -50px 0px'
-  };
+/**
+ * 4. INTERACTIVE MENU EXPLORER FILTER
+ * Sorts categorical culinary metadata wrappers with dynamic CSS scale classes.
+ */
+function initMenuFilterSystem() {
+  const tabButtons = document.querySelectorAll(".menu-tab-btn");
+  const menuCardWrappers = document.querySelectorAll(".menu-card-wrapper");
 
-  const revealObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('active');
-        // Stop observing once animated in
-        observer.unobserve(entry.target);
-      }
-    });
-  }, revealOptions);
+  if (tabButtons.length === 0 || menuCardWrappers.length === 0) return;
 
-  const elementsToReveal = document.querySelectorAll('.scroll-reveal');
-  elementsToReveal.forEach(elem => {
-    revealObserver.observe(elem);
-  });
+  tabButtons.forEach(button => {
+    button.addEventListener("click", () => {
+      // Step A: Synchronize active buttons visual state markers
+      tabButtons.forEach(btn => btn.classList.remove("active"));
+      button.classList.add("active");
 
-  // ==========================================
-  // 5. ACTIVE NAVIGATION SYNC ON SCROLL
-  // ==========================================
-  const sectionObserverOptions = {
-    threshold: 0.35,
-    rootMargin: '-80px 0px -20% 0px'
-  };
+      // Step B: Filter data criteria processing
+      const filterCategory = button.getAttribute("data-category");
 
-  const updateActiveNavLink = (activeId) => {
-    // Sync Desktop Nav Links
-    navLinks.forEach(link => {
-      const href = link.getAttribute('href').substring(1);
-      if (href === activeId) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
+      menuCardWrappers.forEach(wrapper => {
+        // Collect embedded space-separated parameters inside data targets
+        const itemCategories = wrapper.getAttribute("data-item-category").split(" ");
 
-    // Sync Mobile Nav Links
-    mobileLinks.forEach(link => {
-      const href = link.getAttribute('href').substring(1);
-      if (href === activeId) {
-        link.classList.add('active');
-      } else {
-        link.classList.remove('active');
-      }
-    });
-  };
-
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const id = entry.target.getAttribute('id');
-        updateActiveNavLink(id);
-      }
-    });
-  }, sectionObserverOptions);
-
-  sections.forEach(section => {
-    sectionObserver.observe(section);
-  });
-
-  // ==========================================
-  // 6. INTERACTIVE MENU CATEGORY FILTERING (FIXED)
-  // ==========================================
-  menuTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-      // Toggle active tab visual
-      menuTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-
-      const filterValue = tab.getAttribute('data-category');
-
-      // Filter card containers safely
-      menuCards.forEach(card => {
-        const rawCategory = card.getAttribute('data-item-category');
-        // Fallback check to prevent crashing if attribute is missing
-        const itemCategories = rawCategory ? rawCategory.split(' ') : [];
-
-        if (filterValue === 'all' || itemCategories.includes(filterValue)) {
-          card.classList.remove('hide');
-          card.classList.add('show');
-          card.style.display = 'block'; // Ensures smooth layout rendering
+        if (filterCategory === "all" || itemCategories.includes(filterCategory)) {
+          wrapper.classList.remove("hide");
+          wrapper.classList.add("show");
         } else {
-          card.classList.remove('show');
-          card.classList.add('hide');
-          card.style.display = 'none'; // Prevents hidden elements from layout-hogging
+          wrapper.classList.remove("show");
+          wrapper.classList.add("hide");
         }
       });
     });
   });
+}
 
-  // ==========================================
-  // 7. ELEGANT CONTACT FORM HANDLER (OPTIMIZED)
-  // ==========================================
-  if (contactForm) {
-    contactForm.addEventListener('submit', (e) => {
-      e.preventDefault();
+/**
+ * 5. SMART ACTIVE NAVIGATION LINKS MAPPING
+ * Tracks viewport coordinates to update navbar highlight lines dynamically.
+ */
+function initActiveNavigationScrollMapping() {
+  const sections = document.querySelectorAll("section[id]");
+  const desktopLinks = document.querySelectorAll(".desktop-nav .nav-link");
+  const mobileLinks = document.querySelectorAll(".mobile-nav-links .mobile-link");
 
-      // Get values for client visual success feedback
-      const userName = document.getElementById('form-name').value;
-      const userPhone = document.getElementById('form-phone').value;
-      const userEmail = document.getElementById('form-email').value;
+  const updateActiveState = () => {
+    const scrollPosition = window.scrollY + 150; // Dynamic offset adjustments for header height
 
-      // Animate the button to custom loading state
-      const submitBtn = contactForm.querySelector('button[type="submit"]');
-      
-      submitBtn.disabled = true;
-      submitBtn.innerHTML = 'Sending message <i class="fa-solid fa-spinner fa-spin icon-right"></i>';
-      submitBtn.style.opacity = '0.7';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.offsetHeight;
+      const sectionId = section.getAttribute("id");
 
-      // Simulate API post delay (1.5 seconds)
-      setTimeout(() => {
-        // Fade out form fields cleanly
-        contactForm.style.transition = 'opacity 0.3s ease';
-        contactForm.style.opacity = '0';
-        
-        setTimeout(() => {
-          contactForm.style.display = 'none';
-          
-          // Custom success alert modification
-          successAlert.querySelector('h4').textContent = `Message Sent, ${userName}!`;
-          successAlert.style.display = 'flex';
-          successAlert.style.opacity = '1';
-          
-          console.log('Inquiry details captured:', {
-            name: userName,
-            phone: userPhone,
-            email: userEmail,
-            inquiry: document.getElementById('form-inquiry').value,
-            message: document.getElementById('form-message').value,
-            timestamp: new Date().toISOString()
-          });
+      if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        // Synchronize Desktop Active Link State
+        desktopLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${sectionId}`);
+        });
 
-          // Reset form fields internally in the background
-          contactForm.reset();
-          submitBtn.disabled = false;
-          submitBtn.innerHTML = 'Send Message <i class="fa-solid fa-paper-plane icon-right"></i>';
-          submitBtn.style.opacity = '1';
-        }, 300);
-
-      }, 1500);
-
-    });
-  }
-
-  // Smooth scroll logic fallback for iOS safari back/forward button issues
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const targetId = this.getAttribute('href');
-      if (targetId === '#') return;
-      
-      const targetElement = document.querySelector(targetId);
-      if (targetElement) {
-        const offset = 80; // height of sticky nav
-        const elementPosition = targetElement.getBoundingClientRect().top;
-        const offsetPosition = elementPosition + window.scrollY - offset;
-
-        window.scrollTo({
-          top: offsetPosition,
-          behavior: 'smooth'
+        // Synchronize Mobile Active Link State
+        mobileLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href") === `#${sectionId}`);
         });
       }
     });
+  };
+
+  window.addEventListener("scroll", updateActiveState);
+  updateActiveState(); // Initial runtime synchronization call
+}
+
+/**
+ * 6. VIEWPORT INTERSECTION SCROLL REVEAL ANIMATIONS
+ * Programmatically tracks structural elements tagged with reveal configurations.
+ */
+function initScrollRevealAnimations() {
+  const revealElements = document.querySelectorAll(".scroll-reveal");
+  
+  if (revealElements.length === 0) return;
+
+  // Utilize high performance hardware-accelerated intersection observer tracking API
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // Elements get injected with active translation controls defined inside layout variables
+        entry.target.classList.add("reveal-active");
+        
+        // Stop observation overhead cycles since presentation logic has executed
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.15, // Fire trigger phase immediately when 15% of the card crosses bounds
+    rootMargin: "0px 0px -50px 0px" // Slight bottom offset buffer padding configurations
   });
 
-});
+  revealElements.forEach(element => {
+    revealObserver.observe(element);
+  });
+}
