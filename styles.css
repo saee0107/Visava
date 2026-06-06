@@ -1,6 +1,7 @@
 /* ==========================================================================
-   VISAVA HILL RESORT - COZY NATURE RESTAURANT WEBSITE STYLING
+   VISAVA HILL RESORT - ENHANCED COZY NATURE RESTAURANT WEBSITE STYLING
    Theme: Welcoming, down-to-earth, nature-inspired, clean forest green & warm sand.
+   ENHANCED: Beautiful Kass Plateau background + improved visual appeal
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -62,7 +63,7 @@ body {
   font-family: var(--font-body);
   line-height: 1.6;
   overflow-x: hidden;
-  background: var(--color-dark-bg); /* Simplified base gradient to a clean flat background */
+  background: var(--color-dark-bg);
 }
 
 /* Custom Scrollbar - Standardized */
@@ -87,7 +88,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 600;
-  letter-spacing: 0px; /* Removed open letter-spacing */
+  letter-spacing: 0px;
 }
 
 a {
@@ -115,21 +116,23 @@ img {
   left: 0;
   width: 0%;
   height: 4px;
-  background: var(--color-gold);
+  background: linear-gradient(90deg, var(--color-gold), var(--color-gold-light));
   z-index: 1001;
   transition: width 0.1s linear;
+  box-shadow: 0 0 10px rgba(223, 177, 91, 0.5);
 }
 
 /* --------------------------------------------------------------------------
    3. REUSABLE COMPONENTS & UTILITIES
    -------------------------------------------------------------------------- */
 .section-padding {
-  padding: 80px 5%; /* Brought down extreme elite spacing padding */
+  padding: 80px 5%;
 }
 
 .gold-text-accent {
-  color: var(--color-gold); /* Completely un-clip text and remove gradient masks */
+  color: var(--color-gold);
   display: inline-block;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .gold-dot {
@@ -146,7 +149,7 @@ img {
   background: var(--bg-glass);
   border: 1px solid var(--border-glass);
   box-shadow: var(--shadow-premium);
-  border-radius: 8px; /* Square off corners slightly to feel practical */
+  border-radius: 8px;
   transition: var(--trans-smooth);
 }
 
@@ -161,7 +164,7 @@ img {
   align-items: center;
   justify-content: center;
   padding: 12px 24px;
-  border-radius: 4px; /* Changed from pill buttons to standard softly rounded buttons */
+  border-radius: 4px;
   font-family: var(--font-body);
   font-size: 0.9rem;
   font-weight: 600;
@@ -175,22 +178,26 @@ img {
   background: var(--color-gold);
   color: var(--color-dark-bg);
   border: none;
+  box-shadow: 0 4px 15px rgba(223, 177, 91, 0.3);
 }
 
 .btn-gold-solid:hover {
   background: var(--color-gold-light);
-  transform: translateY(-1px);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(223, 177, 91, 0.4);
 }
 
 .btn-white-border {
   background: transparent;
   color: var(--color-white);
-  border: 1px solid rgba(255, 255, 255, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
 }
 
 .btn-white-border:hover {
   background: rgba(255, 255, 255, 0.1);
-  transform: translateY(-1px);
+  border-color: var(--color-gold);
+  transform: translateY(-2px);
 }
 
 .btn-nav-gold {
@@ -238,7 +245,7 @@ img {
 }
 
 .section-title {
-  font-size: 2.2rem; /* Reduced colossal luxury sizing */
+  font-size: 2.2rem;
   line-height: 1.3;
   margin-bottom: 20px;
   color: var(--color-white);
@@ -285,15 +292,16 @@ img {
   width: 100%;
   padding: 20px 5%;
   z-index: 1000;
-  background: rgba(17, 34, 28, 0.9); /* Default to solid opaque background for clean readability */
+  background: rgba(17, 34, 28, 0.9);
   border-bottom: 1px solid rgba(255, 255, 255, 0.05);
   transition: var(--trans-fast);
+  backdrop-filter: blur(10px);
 }
 
 #main-header.scrolled {
   padding: 10px 5%;
-  background: #11221c;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  background: rgba(17, 34, 28, 0.95);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .header-container {
@@ -309,12 +317,18 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
+  transition: var(--trans-fast);
+}
+
+.logo:hover {
+  opacity: 0.8;
 }
 
 .logo-img {
   width: 100px;
   height: 80px;
   object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .logo-text {
@@ -326,12 +340,13 @@ img {
   font-size: 20px;
   font-weight: bold;
   color: white;
+  letter-spacing: 1px;
 }
 
 .logo-subtitle {
   font-size: 11px;
   letter-spacing: 1px;
-  color: var(--color-sage);
+  color: var(--color-gold);
 }
 
 /* Desktop Menu Links */
@@ -349,16 +364,13 @@ img {
   color: rgba(255, 255, 255, 0.8);
   padding: 4px 0;
   position: relative;
+  transition: var(--trans-fast);
 }
 
 .nav-link:hover,
 .nav-link.active {
   color: var(--color-gold);
-}
-
-/* Removed complicated pseudo-element underline slide routines */
-.nav-link::after {
-  display: none;
+  text-shadow: 0 0 10px rgba(223, 177, 91, 0.3);
 }
 
 /* Hamburger toggle for mobile */
@@ -443,11 +455,11 @@ img {
 }
 
 /* --------------------------------------------------------------------------
-   5. HOME / HERO SECTION
+   5. HOME / HERO SECTION - ENHANCED WITH KASS PLATEAU
    -------------------------------------------------------------------------- */
 .hero-section {
-  height: 80vh; /* Scaled down massive widescreen layout size */
-  min-height: 550px;
+  height: 100vh;
+  min-height: 650px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -456,9 +468,27 @@ img {
   padding: 0 5%;
   position: relative;
   overflow: hidden;
-  background-image: url('assets/images/hero_scenic_deck.png');
+  
+  /* ENHANCED: Beautiful Kass Plateau / Kaspalteau Background */
+  background-image: 
+    linear-gradient(135deg, rgba(17, 34, 28, 0.65) 0%, rgba(17, 34, 28, 0.5) 50%, rgba(17, 34, 28, 0.65) 100%),
+    url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?auto=format&fit=crop&w=2000&q=80');
   background-size: cover;
-  background-position: center;
+  background-position: center 30%;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center bottom, rgba(17, 34, 28, 0.4) 0%, rgba(17, 34, 28, 0.8) 100%);
+  z-index: 1;
+  pointer-events: none;
 }
 
 .hero-bg-overlay {
@@ -467,7 +497,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(17, 34, 28, 0.7); /* Grounded green tint blend overlay */
+  background: rgba(17, 34, 28, 0.5);
   z-index: 1;
 }
 
@@ -475,6 +505,18 @@ img {
   max-width: 850px;
   z-index: 2;
   position: relative;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .hero-badge {
@@ -482,6 +524,8 @@ img {
   align-items: center;
   gap: 10px;
   margin-bottom: 15px;
+  animation: fadeInUp 1s ease-out 0.2s forwards;
+  opacity: 0;
 }
 
 .badge-line {
@@ -500,45 +544,70 @@ img {
 }
 
 .hero-title {
-  font-size: 2.8rem;
+  font-size: 3rem;
   line-height: 1.2;
   margin-bottom: 15px;
   font-weight: 700;
+  animation: fadeInUp 1s ease-out 0.4s forwards;
+  opacity: 0;
+  text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  letter-spacing: -0.5px;
 }
 
 .hero-subtitle {
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   max-width: 700px;
   margin: 0 auto 30px auto;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.95);
   font-weight: 400;
+  animation: fadeInUp 1s ease-out 0.6s forwards;
+  opacity: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .hero-actions {
   display: flex;
   gap: 15px;
   justify-content: center;
+  animation: fadeInUp 1s ease-out 0.8s forwards;
+  opacity: 0;
+  flex-wrap: wrap;
 }
 
-/* Simplified Scroll indicators */
+/* Scroll indicators */
 .scroll-down-wrapper {
   position: absolute;
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(-10px);
+  }
 }
 
 .scroll-down-indicator {
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 0.75rem;
+  transition: var(--trans-fast);
+}
+
+.scroll-down-indicator:hover {
+  color: var(--color-gold);
 }
 
 .mouse-icon {
-  display: none; /* Removed luxury tech mouse icons */
+  display: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -586,13 +655,18 @@ img {
 .highlight-item {
   display: flex;
   gap: 15px;
+  transition: var(--trans-smooth);
+}
+
+.highlight-item:hover {
+  transform: translateX(5px);
 }
 
 .highlight-icon {
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  background: var(--color-forest-medium);
+  background: linear-gradient(135deg, var(--color-forest-medium), var(--color-forest-light));
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -611,7 +685,6 @@ img {
   color: var(--color-sage);
 }
 
-/* Dropped complex frame overlays on photos */
 .about-visuals {
   position: relative;
   padding: 0;
@@ -619,6 +692,8 @@ img {
 
 .main-image-wrapper {
   position: relative;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
 .glass-photo-frame {
@@ -633,9 +708,13 @@ img {
   width: 100%;
   height: 400px;
   object-fit: cover;
+  transition: var(--trans-smooth);
 }
 
-/* Simplified info badge badge */
+.main-image-wrapper:hover .about-main-img {
+  transform: scale(1.05);
+}
+
 .floating-badge-glass {
   position: absolute;
   bottom: 15px;
@@ -645,6 +724,7 @@ img {
   background: var(--color-forest-deep);
   border: 1px solid var(--color-forest-light);
   border-radius: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .badge-stat {
@@ -662,7 +742,10 @@ img {
    7. PARALLAX QUOTE SECTION
    -------------------------------------------------------------------------- */
 .parallax-quote-section {
-  background-color: var(--color-forest-deep); /* Dropped visual parallax scroll triggers */
+  background-color: var(--color-forest-deep);
+  background-image: linear-gradient(135deg, rgba(22, 46, 37, 0.8), rgba(31, 66, 53, 0.8)), url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=1600&q=80');
+  background-attachment: fixed;
+  background-size: cover;
   padding: 60px 10%;
   text-align: center;
 }
@@ -689,6 +772,7 @@ img {
   font-style: normal;
   margin-bottom: 15px;
   color: var(--color-white);
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .quote-author {
@@ -715,6 +799,7 @@ img {
   background: var(--color-dark-bg);
   border-radius: 4px;
   padding: 4px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .menu-tab-btn {
@@ -726,11 +811,13 @@ img {
   font-weight: 600;
   border-radius: 2px;
   cursor: pointer;
+  transition: var(--trans-smooth);
 }
 
 .menu-tab-btn.active {
   background: var(--color-gold);
   color: var(--color-dark-bg);
+  box-shadow: 0 0 15px rgba(223, 177, 91, 0.3);
 }
 
 /* Menu items Grid */
@@ -757,21 +844,31 @@ img {
   background: var(--color-dark-bg);
   border-radius: 6px;
   border: 1px solid transparent;
+  overflow: hidden;
+  transition: var(--trans-smooth);
 }
 
 .menu-card:hover {
-  border-color: var(--color-forest-light);
+  border-color: var(--color-gold);
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(223, 177, 91, 0.2);
 }
 
 .menu-card-image-box {
   height: 200px;
   position: relative;
+  overflow: hidden;
 }
 
 .menu-card-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  transition: var(--trans-smooth);
+}
+
+.menu-card:hover .menu-card-img {
+  transform: scale(1.08);
 }
 
 .menu-card-tag {
@@ -871,6 +968,11 @@ img {
 .contact-item {
   display: flex;
   gap: 15px;
+  transition: var(--trans-smooth);
+}
+
+.contact-item:hover {
+  transform: translateX(5px);
 }
 
 .contact-icon-box {
@@ -892,6 +994,11 @@ img {
   font-size: 1.1rem;
   font-weight: 700;
   color: var(--color-gold);
+  transition: var(--trans-fast);
+}
+
+.phone-link a:hover {
+  text-shadow: 0 0 10px rgba(223, 177, 91, 0.5);
 }
 
 .social-icons {
@@ -908,11 +1015,13 @@ img {
   align-items: center;
   justify-content: center;
   color: var(--color-white);
+  transition: var(--trans-fast);
 }
 
 .social-icon:hover {
   background: var(--color-gold);
   color: var(--color-dark-bg);
+  transform: translateY(-3px);
 }
 
 /* Contact Form Form Grouping Controls */
@@ -951,12 +1060,15 @@ img {
   font-family: var(--font-body);
   font-size: 0.85rem;
   outline: none;
+  transition: var(--trans-fast);
 }
 
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--color-gold);
+  box-shadow: 0 0 0 3px rgba(223, 177, 91, 0.1);
+  background: rgba(31, 66, 53, 0.8);
 }
 
 .form-alert-success {
@@ -968,14 +1080,14 @@ img {
   margin-top: 15px;
 }
 
-/* Dropped stylized topographical lines on custom maps */
+/* Map wrapper */
 .map-wrapper {
   height: 350px;
   margin-top: 40px;
 }
 
 .map-overlay-card {
-  display: none; /* Removed luxury floating popup modules on map panels */
+  display: none;
 }
 
 .premium-mock-map {
@@ -1017,6 +1129,7 @@ img {
   font-weight: 700;
   color: var(--color-white);
   margin-bottom: 5px;
+  letter-spacing: 1px;
 }
 
 .footer-tagline {
@@ -1046,10 +1159,12 @@ img {
 .footer-links a {
   font-size: 0.85rem;
   color: var(--color-sage);
+  transition: var(--trans-fast);
 }
 
 .footer-links a:hover {
   color: var(--color-gold);
+  transform: translateX(3px);
 }
 
 .footer-time {
@@ -1073,7 +1188,7 @@ img {
 .scroll-reveal {
   opacity: 1;
   transform: none;
-  transition: none; /* Removed heavy premium transition layouts */
+  transition: none;
 }
 
 /* --------------------------------------------------------------------------
@@ -1085,6 +1200,10 @@ img {
   }
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .hero-title {
+    font-size: 2.2rem;
   }
 }
 
@@ -1103,5 +1222,48 @@ img {
   }
   .footer-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .hero-section {
+    height: 85vh;
+    background-attachment: scroll;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero-title {
+    font-size: 1.5rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .menu-tabs-container {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .menu-tab-btn {
+    padding: 8px 12px;
+    font-size: 0.7rem;
   }
 }
